@@ -1,0 +1,45 @@
+.contents {
+    padding: 1.2rem 1rem 1rem 1rem;
+    height: 50rem;
+    width: 30rem;
+    background-color: var(--offwhite);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 30px;
+
+    .screenBox {
+        height: 7rem;
+        display: flex;
+
+        .view {
+            height: 100%;
+            width: 100%;
+            box-shadow: inset -2px -2px 6px #8f9189;
+            border-radius: 24px;
+            background-color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 1rem;
+            padding-right: 1rem;
+            row-gap: 1rem;
+            .output {
+                font-size: 1.5rem;
+                font-weight: 600;
+                padding-right: 1.3rem;
+            }
+            .input {
+                font-size: 1.2rem;
+                padding-right: 1rem;
+            }
+        }
+    }
+    .buttonRow {
+        display: flex;
+        flex-direction: row;
+    }
+}

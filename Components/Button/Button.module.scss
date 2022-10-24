@@ -1,0 +1,42 @@
+.contents {
+    border-radius: 80px;
+    border: none;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    padding: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(0deg, var(--offwhite), var(--white));
+    cursor: pointer;
+    transition: 0.5s;
+    &:active {
+        animation: click 0.1s ease-in-out;
+    }
+
+    .number {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(0deg, var(--white), var(--offwhite));
+        border-radius: 80px;
+
+        color: var(--number);
+        font-size: 1.8rem;
+    }
+}
+
+@keyframes click {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        transform: translateY(3px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+}
