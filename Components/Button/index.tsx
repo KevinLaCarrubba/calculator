@@ -1,21 +1,25 @@
 import styles from './Button.module.scss'
+import { useCallback, useState } from 'react'
+import math from 'mathjs'
 
 interface ButtonProps {
     input: any
     width: number
-    setInput: (value: number) => void
-    setOperator: (value: string) => void
+    changeOutput: (value: any) => void
 }
 
-const Button = ({ input, width, setInput, setOperator }: ButtonProps) => {
-    const getValue = (data: any) => {
-        const { textContent } = data.target
-        if (/^[0-9]*$/.test(textContent)) {
-            setInput(parseInt(textContent))
+const Button = ({ input, width, changeOutput }: ButtonProps) => {
+    const getValue = (event: any) => {
+        // event.preventDefault()
+        const { textContent } = event.target
+        if (textContent === '=') {
+        } else if (textContent === 'x') {
+            return changeOutput('*')
         } else {
-            setOperator(textContent)
+            return changeOutput(textContent)
         }
     }
+
     return (
         <button
             className={styles.contents}
