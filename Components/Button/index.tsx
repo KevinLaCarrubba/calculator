@@ -8,7 +8,7 @@ interface ButtonProps {
 }
 
 const Button = ({ input, width, changeOutput }: ButtonProps) => {
-    const [playSound] = useSound(click, { volume: 1 })
+    const [playSound] = useSound(click, { volume: 0.85 })
     const getValue = (event: any) => {
         const { textContent } = event.target
         event.preventDefault()
