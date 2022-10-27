@@ -1,5 +1,5 @@
 import styles from './Button.module.scss'
-import audio from '../../assets/buttonClick.mp3'
+
 interface ButtonProps {
     input: any
     width: number
@@ -7,13 +7,13 @@ interface ButtonProps {
 }
 
 const Button = ({ input, width, changeOutput }: ButtonProps) => {
-    const playAudio = () => {
-        new Audio(audio).play()
-    }
+    // const playAudio = () => {
+    //     new Audio(audio).play()
+    // }
     const getValue = (event: any) => {
         const { textContent } = event.target
         event.preventDefault()
-        playAudio()
+        // playAudio()
         if (textContent === 'x') return changeOutput('*')
         return changeOutput(textContent)
     }
