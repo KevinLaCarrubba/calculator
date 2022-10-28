@@ -3,13 +3,12 @@ import styles from './Calculator.module.scss'
 import Button from '../Button'
 import DisabledButton from '../Button/DIsabledButton'
 import { evaluate } from 'mathjs'
+import { doubleSymbol } from '../../utilities/Regex'
 
 const Calculator = () => {
     const [expression, setExpression] = useState<string>('')
     const [error, setError] = useState<boolean>(false)
-    const regexTest = new RegExp(
-        /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~][`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/
-    )
+
     const changeOutput = (textContent: any) => {
         switch (textContent) {
             case 'AC':
@@ -23,8 +22,7 @@ const Calculator = () => {
                 setExpression(expression.concat('*'))
                 break
             case '=':
-                console.log(regexTest.test(expression))
-                if (regexTest.test(expression)) {
+                if (doubleSymbol.test(expression)) {
                     setExpression('Invalid Output')
                     setError(true)
                 } else {
@@ -36,6 +34,7 @@ const Calculator = () => {
                 break
         }
     }
+
     return (
         <div className={styles.contents}>
             <div className={styles.screenBox}>

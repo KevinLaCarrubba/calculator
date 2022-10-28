@@ -1,10 +1,13 @@
 import { AppProps } from 'next/app'
+import ToggleProvidver from '../utilities/ToggleContext'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <main>
-            <Component {...pageProps} />
+            <ToggleProvidver>
+                <Component {...pageProps} />
+            </ToggleProvidver>
         </main>
     )
 }

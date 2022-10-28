@@ -1,6 +1,8 @@
-import styles from './Button.module.scss'
+import { useContext } from 'react'
 import click from '../../assets/sound/click.mp3'
 import useSound from 'use-sound'
+import styles from './Button.module.scss'
+import { ToggleContext } from '../../utilities/ToggleContext'
 interface ButtonProps {
     input: any
     width: number
@@ -8,11 +10,12 @@ interface ButtonProps {
 }
 
 const Button = ({ input, width, changeOutput }: ButtonProps) => {
-    const [playSound] = useSound(click, { volume: 0.85 })
+    const [playSound] = useSound(click, { volume: 0.65 })
+    const { playClick } = useContext(ToggleContext)
     const getValue = (event: any) => {
         const { textContent } = event.target
         event.preventDefault()
-        playSound()
+        if (playClick) playSound()
         if (textContent === 'x') return changeOutput('*')
         return changeOutput(textContent)
     }
