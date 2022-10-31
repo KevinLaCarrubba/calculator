@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { ToggleContext } from '../../utilities/ToggleContext'
 
 import styles from './ToggleButton.module.scss'
@@ -11,18 +11,16 @@ const ToggleButton = () => {
     }
 
     return (
-        <label className={styles.label}>
-            <div className={styles.toggle}>
-                <input
-                    className={styles.toggleState}
-                    type="checkbox"
-                    name="check"
-                    onChange={toggleClick}
-                />
-                <div className={styles.indicator}></div>
-            </div>
-            <div className={styles.labelText}>Toggle Sound</div>
-        </label>
+        <div className={styles.contents}>
+            <label htmlFor="sound-check">Sound:</label>
+            <input
+                id="sound-check"
+                className={styles.toggle}
+                onClick={toggleClick}
+                type="checkbox"
+                defaultChecked
+            />
+        </div>
     )
 }
 

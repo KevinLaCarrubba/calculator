@@ -5,8 +5,12 @@
     place-items: center;
     margin: 0 10px;
     padding: 6px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(0deg, var(--offwhite), var(--white));
+    box-shadow: var(--defaultShadow);
+    background: linear-gradient(
+        0deg,
+        var(--secondary-color),
+        var(--primary-color)
+    );
     cursor: pointer;
     transition: 0.5s;
     &:active {
@@ -18,7 +22,12 @@
         height: 100%;
         display: grid;
         place-items: center;
-        background: linear-gradient(0deg, var(--white), var(--offwhite));
+        user-select: none;
+        background: linear-gradient(
+            0deg,
+            var(--primary-color),
+            var(--secondary-color)
+        );
         border-radius: 80px;
 
         color: var(--number);
@@ -29,14 +38,14 @@
 @keyframes click {
     0% {
         transform: translateY(0px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: var(--defaultShadow);
     }
     50% {
         transform: translateY(3px);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: var(--moveShadow);
     }
     100% {
         transform: translateY(0px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: var(--defaultShadow);
     }
 }
